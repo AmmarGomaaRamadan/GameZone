@@ -1,0 +1,42 @@
+﻿
+@model CreateGameViewModel
+
+<p>Welcome From Create</p>
+<form asp-controller="Game" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-6">
+            <div>
+                <label asp-for="Name" class="form-label mt-4"></label>
+                <input type="text" class="form-control" asp-for="Name">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="CategoryId" class="form-label mt-4"></label>
+                <select class="form-select" asp-for="CategoryId" asp-items="Model.Categories">
+                    <option>Select Category</option>
+                </select>
+            </div>
+            <div>
+                <label asp-for="SelectedDevices" class="form-label mt-4"></label>
+                <select class="form-select" asp-for="SelectedDevices" asp-items="Model.Devices">
+                    <option>Select Device</option>
+                </select>
+            </div>
+            <div>
+                <label asp-for="Description" class="form-label mt-4"></label>
+                <textarea class="form-control" asp-for="Description"></textarea>
+                 @* <span asp-validation-for="Name" class="text-danger"></span> *@
+            </div>
+            <div>
+                <label asp-for="Cover" class="form-label mt-4"></label>
+                <input type="file" class="form-control" asp-for="Cover">
+                <small  class="form-text text-muted">Only jpg,jpeg,png files are allowed with max size 1Mb</small>
+                <span asp-validation-for="Cover" class="text-danger"></span>
+            </div>
+            <button class="btn btn-light mt-4">Save</button>
+        </div>
+        
+        <div class="col-md-6">
+        </div>
+    </div>
+</form>
