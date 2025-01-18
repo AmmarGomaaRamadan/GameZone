@@ -7,7 +7,7 @@
 namespace GameZone.Migrations
 {
     /// <inheritdoc />
-    public partial class createDb : Migration
+    public partial class create : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -24,6 +24,20 @@ namespace GameZone.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Categories", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Devices",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Icon = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Devices", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -49,26 +63,6 @@ namespace GameZone.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Devices",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Icon = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    GameId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Devices", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Devices_Games_GameId",
-                        column: x => x.GameId,
-                        principalTable: "Games",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "GameDevics",
                 columns: table => new
                 {
@@ -79,9 +73,9 @@ namespace GameZone.Migrations
                 {
                     table.PrimaryKey("PK_GameDevics", x => new { x.DeviceId, x.GameId });
                     table.ForeignKey(
-                        name: "FK_GameDevics_Games_DeviceId",
+                        name: "FK_GameDevics_Devices_DeviceId",
                         column: x => x.DeviceId,
-                        principalTable: "Games",
+                        principalTable: "Devices",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
@@ -102,10 +96,15 @@ namespace GameZone.Migrations
                     { 3, "descption", "Cat3" }
                 });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Devices_GameId",
+            migrationBuilder.InsertData(
                 table: "Devices",
-                column: "GameId");
+                columns: new[] { "Id", "Icon", "Name" },
+                values: new object[,]
+                {
+                    { 1, "icon1", "dev1" },
+                    { 2, "icon1", "dev2" },
+                    { 3, "icon1", "dev3" }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_GameDevics_GameId",
@@ -122,10 +121,10 @@ namespace GameZone.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Devices");
+                name: "GameDevics");
 
             migrationBuilder.DropTable(
-                name: "GameDevics");
+                name: "Devices");
 
             migrationBuilder.DropTable(
                 name: "Games");

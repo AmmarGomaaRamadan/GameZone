@@ -18,7 +18,7 @@
             </div>
             <div>
                 <label asp-for="SelectedDevices" class="form-label mt-4"></label>
-                <select class="form-select" asp-for="SelectedDevices" asp-items="Model.Devices">
+                <select class="form-select" asp-for="SelectedDevices" asp-items="Model.GameDevices">
                     <option>Select Device</option>
                 </select>
             </div>
@@ -29,7 +29,11 @@
             </div>
             <div>
                 <label asp-for="Cover" class="form-label mt-4"></label>
-                <input type="file" class="form-control" asp-for="Cover">
+                <input type="file" class="form-control" asp-for="Cover"
+                data-rule-extension="@Settings.AllowedExtensions.Replace(".",string.Empty)" 
+                data-msg-extension="Not Allowed extension"
+                data-rule-filesize="@Settings.AllowedInbyts"
+                data-msg-filesize="Allowed Size is @Settings.AllowedSizeInMB">
                 <small  class="form-text text-muted">Only jpg,jpeg,png files are allowed with max size 1Mb</small>
                 <span asp-validation-for="Cover" class="text-danger"></span>
             </div>
@@ -40,3 +44,11 @@
         </div>
     </div>
 </form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial.cshtml" />
+    <script>
+        $.validator.addMethod('filesize', function (value, elememt, param) { 
+            return this.optional(elememt) || elememt.files[0].size <= param;});
+    </script>
+
+}

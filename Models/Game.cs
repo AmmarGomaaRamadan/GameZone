@@ -13,9 +13,10 @@ namespace GameZone.Models
         public string Description { get; set; } = string.Empty;
         [Required,MaxLength(150)]
         public string Cover { get; set; } = string.Empty;
-        [ AllowNull]
+        [ Required]
         public int CategoryId { get; set; } 
         public Category Category { get; set; } = default!;
-        public ICollection<Device> Devices { get; set; } = new List<Device>();   
+        [Required]
+        public ICollection<GameDevice> GameDevices { get; set; } = new List<GameDevice>();   
     }
 }

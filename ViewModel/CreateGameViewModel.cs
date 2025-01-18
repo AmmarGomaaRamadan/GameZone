@@ -11,15 +11,15 @@ namespace GameZone.ViewModel
         [Required, MaxLength(100)]
         public string Name { get; set; } = string.Empty;
         [Display(Name="Categories")]
+         [Required]
         public int CategoryId { get; set; }
-        public IEnumerable<SelectListItem> Categories { get; set; } = Enumerable.Empty<SelectListItem>();
+        public IEnumerable<SelectListItem> Categories { get; set; } = new List<SelectListItem>();
         [Display(Name="Supported devices")]
-
         public List<int> SelectedDevices { get; set; } = new List<int>();
-        public IEnumerable<SelectListItem> Devices { get; set; } = Enumerable.Empty<SelectListItem>();
-        [AllowNull, MaxLength(100)]
+        public IEnumerable<SelectListItem> GameDevices { get; set; } = new List<SelectListItem>();
+        [Required, MaxLength(100)]
         public string Description { get; set; } = string.Empty;
-       // [Required, MaxLength(150)]
+        [AllowedFileExtension(Settings.AllowedExtensions), AllowedFileSize(Settings.AllowedInbyts)]
         public IFormFile Cover { get; set; } = default!;
 
     }

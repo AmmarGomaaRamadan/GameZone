@@ -3,6 +3,7 @@
 
 using GameZone.Services.Categories;
 using GameZone.Services.Devices;
+using GameZone.Services.Games;
 
 namespace GameZone.Controllers
 {
@@ -12,16 +13,20 @@ namespace GameZone.Controllers
         private readonly ApplicationDbContext _context;
         private readonly ICategoryService _categoryService;
         private readonly IDeviceServices _deviceServices;
-        public GameController(ApplicationDbContext context ,IDeviceServices deviceServices,ICategoryService categoryServices)
+        private readonly IGameServices _gameServices;
+        public GameController(ApplicationDbContext context ,IGameServices gameServices,
+            IDeviceServices deviceServices,ICategoryService categoryServices)
         {
             _context = context;
             _categoryService = categoryServices;
             _deviceServices = deviceServices;
+            _gameServices = gameServices;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var model=_gameServices.GetAll();
+            return View(model);
         }
         [HttpGet]
         public IActionResult Create()
@@ -29,20 +34,21 @@ namespace GameZone.Controllers
             CreateGameViewModel viewModel = new()
             {
                 Categories=_categoryService.GetCategories(),
-                Devices=_deviceServices.GetDevices(),
+                GameDevices=_deviceServices.GetDevices(),
             };
             return View(viewModel);
         }
         [HttpPost]
-        public IActionResult Create(CreateGameViewModel model)
+        public async Task<IActionResult> Create(CreateGameViewModel model)
         {
             if (!ModelState.IsValid) {
-                model.Devices= _deviceServices.GetDevices();
+                model.GameDevices= _deviceServices.GetDevices();
                 model.Categories= _categoryService.GetCategories();
                 return View(model);
 
             }
-            return View(model);
+            await _gameServices.Create(model);
+            return RedirectToAction("Index");
 
         }
     }

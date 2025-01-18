@@ -1,10 +1,14 @@
-﻿namespace GameZone.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace GameZone.Models
 {
     public class GameDevice
     {
+      
         public int GameId {  get; set; }
         public Game Game { get; set; } = default!;
+    
         public int DeviceId { get; set; }
-        public Game Device { get; set; } = default!;
+        public Device Device { get; set; } = default!;
     }
 }

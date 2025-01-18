@@ -5,6 +5,26 @@
       "PackagePath": "staticwebassets\\GameZone.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\5ae961f8-05d1-42df-837a-1b4531502e53.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Cover_Images\\5ae961f8-05d1-42df-837a-1b4531502e53.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\693da310-35f0-43c9-b8f3-64724ae2e309.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Cover_Images\\693da310-35f0-43c9-b8f3-64724ae2e309.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\87a2c6f7-3851-42eb-a86b-34d189aa2de1.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Cover_Images\\87a2c6f7-3851-42eb-a86b-34d189aa2de1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\System.Func`1[System.Guid].PNG",
+      "PackagePath": "staticwebassets\\Assets\\Cover_Images\\System.Func`1[System.Guid].PNG"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\da8f33e8-b3cd-4719-83f8-05fda9c18825.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Cover_Images\\da8f33e8-b3cd-4719-83f8-05fda9c18825.jpg"
+    },
+    {
       "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },
