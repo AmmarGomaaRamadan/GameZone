@@ -1,8 +1,36 @@
-﻿@{
+﻿@model List<Game>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@if(!Model.Any())
+{
+    <div class="alert alert-warning mt-5">
+        <h4 class="alert-heading">Warning!</h4>
+        <p class="mb-0"> There is no games yet <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
+    </div>
+}
+else
+{
+    <div class="row mt-5">
+        @foreach (var g in Model)
+        {
+            <a class="col-lg-4 col-md-6 text-decoration-none" asp-controller="Game" asp-action="Details" asp-route-id="@g.Id">
+                <div class="card border-success mb-3" style="max-width: 20rem;">
+                    <div class="card-body" style="background-image:url(@($"{Settings.filePath}/{g.Cover}")); background-size:cover;background-position:center;height:400px">
+                        <div class="h-100">
+                            <span class="badge bg-secondary">@g.Category.Name</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <h5>@g.Name</h5>
+                      
+                    </div>
+                </div>
+            </a>
+            
+        }
+    </div>
+    
+}

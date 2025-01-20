@@ -1,0 +1,23 @@
+﻿
+@model Game
+<a class="btn btn-primary m-2 rounded-2" asp-controller="Home" asp-action="Index">back</a>
+<div class=" card mt-2 overflow-hidden border-1 rounded-4 border-success " style="height:450px">
+    <div class="row p-0">
+        <div class="col-md-7 p-4">
+            <h2 class="fw-bolder text-success">@Model.Name</h2>
+            <h4 class="fw-bold text-light">@Model.Category.Name</h4>
+            <p class="text-white">@Model.Description</p>
+            <div>
+                <h5 class="fw-bold text-white">Supported devices</h5>
+                @foreach (var d in Model.GameDevices)
+                {
+                    <span class="badge bg-secondary me-2">@d.Device.Name</span>
+
+                }
+            </div>
+        </div>
+        <div class="col-md-5">
+            <img src=@($"{Settings.filePath}/{Model.Cover}") alt="@Model.Name" style="height:100%;width:100%" />
+        </div>
+    </div>
+</div>

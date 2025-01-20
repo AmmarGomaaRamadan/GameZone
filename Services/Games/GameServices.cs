@@ -13,7 +13,18 @@ namespace GameZone.Services.Games
             _webHostEnvironment = webHostEnvironment;
             _coverImagePath = $"{webHostEnvironment.WebRootPath}/{Settings.filePath}";
         }
+        public IEnumerable<Game> GetAll()
+        {
+            return _context.Games.Include(g => g.Category).Include(g => g.GameDevices)
+                .ThenInclude(gd => gd.Device).AsNoTracking().ToList<Game>();
+        }
 
+        public Game? GetById(int id)
+        {
+            return _context.Games.Include(g => g.Category).Include(g => g.GameDevices)
+                 .ThenInclude(gd => gd.Device).AsNoTracking().SingleOrDefault(g => g.Id == id);
+
+        }
         public async Task Create(CreateGameViewModel model)
         {
             var coverName = $"{Guid.NewGuid()}{Path.GetExtension(model.Cover.FileName)}";
@@ -35,9 +46,6 @@ namespace GameZone.Services.Games
             _context.Add(game);
             _context.SaveChanges();
         }
-        public IEnumerable<Game>GetAll()
-        {
-             return _context.Games.ToList<Game>();
-        }
+
     }
 }

@@ -135,3 +135,4 @@ C:\Users\DELL\source\repos\GameZone\obj\Debug\net8.0\refint\GameZone.dll
 C:\Users\DELL\source\repos\GameZone\obj\Debug\net8.0\GameZone.pdb
 C:\Users\DELL\source\repos\GameZone\obj\Debug\net8.0\GameZone.genruntimeconfig.cache
 C:\Users\DELL\source\repos\GameZone\obj\Debug\net8.0\ref\GameZone.dll
+C:\Users\DELL\source\repos\GameZone\bin\Debug\net8.0\libman.json

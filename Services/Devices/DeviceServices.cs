@@ -12,7 +12,7 @@ namespace GameZone.Services.Devices
 
         public IEnumerable<SelectListItem> GetDevices()
         {
-            return _context.Devices.Select(d=>new SelectListItem { Value=d.Id.ToString(),Text=d.Name}).ToList();
+            return _context.Devices.Select(d=>new SelectListItem { Value=d.Id.ToString(),Text=d.Name}).AsNoTracking().ToList();
         }
     }
 }

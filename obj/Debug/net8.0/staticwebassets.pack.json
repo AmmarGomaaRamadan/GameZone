@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Assets\\Cover_Images\\5ae961f8-05d1-42df-837a-1b4531502e53.jpg"
     },
     {
+      "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\640be884-c310-456e-a889-91478b025071.PNG",
+      "PackagePath": "staticwebassets\\Assets\\Cover_Images\\640be884-c310-456e-a889-91478b025071.PNG"
+    },
+    {
       "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\693da310-35f0-43c9-b8f3-64724ae2e309.jpg",
       "PackagePath": "staticwebassets\\Assets\\Cover_Images\\693da310-35f0-43c9-b8f3-64724ae2e309.jpg"
     },
@@ -19,6 +23,10 @@
     {
       "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\System.Func`1[System.Guid].PNG",
       "PackagePath": "staticwebassets\\Assets\\Cover_Images\\System.Func`1[System.Guid].PNG"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\a9212e3c-9ce3-4126-8174-fa1fbf207b1b.png",
+      "PackagePath": "staticwebassets\\Assets\\Cover_Images\\a9212e3c-9ce3-4126-8174-fa1fbf207b1b.png"
     },
     {
       "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\da8f33e8-b3cd-4719-83f8-05fda9c18825.jpg",
@@ -35,6 +43,14 @@
     {
       "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\js\\FileExtensionAndSizeValidator.js",
+      "PackagePath": "staticwebassets\\js\\FileExtensionAndSizeValidator.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\js\\ImagePreview.js",
+      "PackagePath": "staticwebassets\\js\\ImagePreview.js"
     },
     {
       "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\js\\site.js",
@@ -267,6 +283,14 @@
     {
       "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\lib\\select2\\css\\select2.min.css",
+      "PackagePath": "staticwebassets\\lib\\select2\\css\\select2.min.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\lib\\select2\\js\\select2.min.js",
+      "PackagePath": "staticwebassets\\lib\\select2\\js\\select2.min.js"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.GameZone.Microsoft.AspNetCore.StaticWebAssets.props",

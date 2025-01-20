@@ -12,14 +12,14 @@
             </div>
             <div>
                 <label asp-for="CategoryId" class="form-label mt-4"></label>
-                <select class="form-select" asp-for="CategoryId" asp-items="Model.Categories">
-                    <option>Select Category</option>
+                <select class="form-select" asp-for="CategoryId" asp-items="Model.Categories" data-placeholder="Select category" data-minimum-results-for-search="Infinity">
+                    <option value=""></option>
                 </select>
             </div>
             <div>
-                <label asp-for="SelectedDevices" class="form-label mt-4"></label>
-                <select class="form-select" asp-for="SelectedDevices" asp-items="Model.GameDevices">
-                    <option>Select Device</option>
+                <label asp-for="SelectedDevices" class="form-label mt-4" ></label>
+                <select class="form-select" asp-for="SelectedDevices" asp-items="Model.GameDevices" data-placeholder="Select devices">
+                    <option value=""></option>
                 </select>
             </div>
             <div>
@@ -31,7 +31,7 @@
                 <label asp-for="Cover" class="form-label mt-4"></label>
                 <input type="file" class="form-control" asp-for="Cover"
                 data-rule-extension="@Settings.AllowedExtensions.Replace(".",string.Empty)" 
-                data-msg-extension="Not Allowed extension"
+                data-msg-extension="Not Allowed extension"    
                 data-rule-filesize="@Settings.AllowedInbyts"
                 data-msg-filesize="Allowed Size is @Settings.AllowedSizeInMB">
                 <small  class="form-text text-muted">Only jpg,jpeg,png files are allowed with max size 1Mb</small>
@@ -40,15 +40,13 @@
             <button class="btn btn-light mt-4">Save</button>
         </div>
         
-        <div class="col-md-6">
+        <div class="col-md-6 d-flex justify-content-center overflow-hidden pt-5 ">
+            <img class="imagPreview d-none" alt="Cover Image" />
         </div>
     </div>
 </form>
 @section Scripts {
     <partial name="_ValidationScriptsPartial.cshtml" />
-    <script>
-        $.validator.addMethod('filesize', function (value, elememt, param) { 
-            return this.optional(elememt) || elememt.files[0].size <= param;});
-    </script>
-
+    <script src="~/js/fileextensionandsizevalidator.js" asp-append-version="true"></script>
+    <script src="~/js/imagepreview.js" asp-append-version="true"></script>
 }

@@ -1,30 +1,51 @@
 ﻿@model List<Game>
-<p>Welcome from Index page</p>
 <a class="btn btn-primary" asp-area="" asp-controller="Game" asp-action="Create">Add new game</a>
+@{
+    ViewData["Title"] = "Game|Index";
+}
 
-<div class="row">
-    @foreach(var game in Model)
-    {
-        <div class="col-md-4">
-            <div class="card mb-3">
-                <h3 class="card-header">@game.Name</h3>
-                @* <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <h6 class="card-subtitle text-muted">Support card subtitle</h6>
-            </div> *@
-                <img src="~/Assets/Cover_Images/@game.Cover" class="d-block user-select-none" width="100%" height="300">
+@if(!Model.Any())
+{
+    <div class="alert alert-warning mt-5">
+        <h4 class="alert-heading">Warning!</h4>
+        <p class="mb-0"> There is no games yet <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
+    </div>
+}
+else
+{
+  <div class="mt-5">
+      <table class="table table-bordered border-primary">
+          @foreach(var g in Model)
+            {
+                <tr class="border-1 border-primary">
+                    <td>
+                        <div class="d-flex">
+                            <div class="pe-4">
+                                <img src=@($"{Settings.filePath}/{@g.Cover}") alt="@g.Name" style="max-height:80px;max-width:70px" />
+                            </div>
+                            <div class="d-flex flex-column justify-content-center">
+                                <h4 class="text-light">@g.Name</h4>
+                                <p class="text-bg-dark">@g.Category.Name</p>
 
-                <div class="card-body">
-                    <p class="card-text">@game.Description</p>
-                    <a href="#">Details</a>
-                </div>
-            </div>
-        </div>
-    }
-    
-           
-    
+                            </div>
 
+                        </div>
+                    </td>
+                    <td class="align-middle"> 
+                        <div class="d-flex justify-content-end ">
+                            <a href="#" class="btn btn-primary rounded rounded-3 me-4">Edit</a>
+                            <a href="#" class="btn btn-danger rounded rounded-3">Delete</a>
+                        </div>
+                    </td>
+
+
+                </tr>
+            }
+            
+
+      </table>
+
+  </div>
     
-</div>
+}
 

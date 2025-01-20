@@ -12,7 +12,7 @@ namespace GameZone.Services.Categories
 
         public IEnumerable<SelectListItem> GetCategories()
         {
-            return _context.Categories.Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.Name }).ToList();
+            return _context.Categories.Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.Name }).AsNoTracking().ToList();
         }
     }
 }
