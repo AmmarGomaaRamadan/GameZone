@@ -1,6 +1,7 @@
 ﻿
 
 
+using GameZone.Models;
 using GameZone.Services.Categories;
 using GameZone.Services.Devices;
 using GameZone.Services.Games;
@@ -55,6 +56,40 @@ namespace GameZone.Controllers
 
             }
             await _gameServices.Create(model);
+            return RedirectToAction("Index");
+
+        }
+        public IActionResult Edit(int id)
+        {
+            var Game=_gameServices.GetById(id);
+            if(Game is null)
+                return NotFound();
+            EditGameViewModel game = new EditGameViewModel
+            {
+                Id = id,
+                Categories = _categoryService.GetCategories(),
+                GameDevices = _deviceServices.GetDevices(),
+                Name = Game.Name,
+                CategoryId = Game.CategoryId,
+                SelectedDevices = Game.GameDevices.Select(g=>g.DeviceId).ToList(),
+                Description = Game.Description,
+                CoverName = Game.Cover
+            };
+            return View(game);
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(EditGameViewModel viewmodel)
+        {
+            if (!ModelState.IsValid)
+            {
+                
+                return View(viewmodel);
+
+            }
+            var game = _gameServices.Update(viewmodel);
+            if (game is null)
+                return BadRequest();
             return RedirectToAction("Index");
 
         }

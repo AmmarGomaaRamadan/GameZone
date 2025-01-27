@@ -5,12 +5,24 @@
       "PackagePath": "staticwebassets\\GameZone.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\23aa2a4e-576c-4b40-8ed7-ccfcb147e97d.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Cover_Images\\23aa2a4e-576c-4b40-8ed7-ccfcb147e97d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\315c72c9-e3a6-46d1-b60f-80f21607b53b.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Cover_Images\\315c72c9-e3a6-46d1-b60f-80f21607b53b.jpg"
+    },
+    {
       "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\5ae961f8-05d1-42df-837a-1b4531502e53.jpg",
       "PackagePath": "staticwebassets\\Assets\\Cover_Images\\5ae961f8-05d1-42df-837a-1b4531502e53.jpg"
     },
     {
       "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\640be884-c310-456e-a889-91478b025071.PNG",
       "PackagePath": "staticwebassets\\Assets\\Cover_Images\\640be884-c310-456e-a889-91478b025071.PNG"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\664aafe4-65f5-4b51-b452-b1ccab9296f5.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Cover_Images\\664aafe4-65f5-4b51-b452-b1ccab9296f5.jpg"
     },
     {
       "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\693da310-35f0-43c9-b8f3-64724ae2e309.jpg",
@@ -23,6 +35,10 @@
     {
       "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\System.Func`1[System.Guid].PNG",
       "PackagePath": "staticwebassets\\Assets\\Cover_Images\\System.Func`1[System.Guid].PNG"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\a16f782e-102b-4311-a5f9-d780b1f4fde7.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Cover_Images\\a16f782e-102b-4311-a5f9-d780b1f4fde7.jpg"
     },
     {
       "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\a9212e3c-9ce3-4126-8174-fa1fbf207b1b.png",

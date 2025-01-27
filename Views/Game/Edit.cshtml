@@ -1,0 +1,54 @@
+﻿@model EditGameViewModel
+
+<h3 class="text-center fw-bolder">Edit Game</h3>
+<form asp-controller="Game" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-6">
+            <div>
+                <label asp-for="Name" class="form-label mt-4"></label>
+                <input type="text" class="form-control" asp-for="Name" value="@Model.Name">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="CategoryId" class="form-label mt-4"></label>
+                <select class="form-select" asp-for="CategoryId" asp-items="Model.Categories" data-placeholder="Select category" data-minimum-results-for-search="Infinity">
+                    <option selected value="@Model.CategoryId"></option>
+                </select>
+            </div>
+            <div>
+                <label asp-for="SelectedDevices" class="form-label mt-4"></label>
+                <select class="form-select" asp-for="SelectedDevices" asp-items="Model.GameDevices" data-placeholder="Select devices">
+                    @foreach(var d in Model.SelectedDevices)
+                    {
+                        <option selected value="@d"></option>
+                    }
+                </select>
+            </div>
+            <div>
+                <label asp-for="Description" class="form-label mt-4"></label>
+                <textarea class="form-control" asp-for="Description">@Model.Description</textarea>
+                @* <span asp-validation-for="Name" class="text-danger"></span> *@
+            </div>
+            <div>
+                <label asp-for="Cover" class="form-label mt-4"></label>
+                <input type="file" class="form-control" asp-for="Cover"
+                       data-rule-extension="@Settings.AllowedExtensions.Replace(".",string.Empty)"
+                       data-msg-extension="Not Allowed extension"
+                       data-rule-filesize="@Settings.AllowedInbyts"
+                       data-msg-filesize="Allowed Size is @Settings.AllowedSizeInMB" value="@Model.CoverName">
+                <small class="form-text text-muted">Only jpg,jpeg,png files are allowed with max size 1Mb</small>
+                <span asp-validation-for="Cover" class="text-danger"></span>
+            </div>
+            <button class="btn btn-light mt-4">Edit</button>
+        </div>
+
+        <div class="col-md-6 d-flex justify-content-center overflow-hidden pt-5 ">
+            <img class="imagPreview" src=@($"{Settings.filePath}/{Model.CoverName}") alt="Cover Image" />
+        </div>
+    </div>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial.cshtml" />
+    <script src="~/js/fileextensionandsizevalidator.js" asp-append-version="true"></script>
+    <script src="~/js/imagepreview.js" asp-append-version="true"></script>
+}

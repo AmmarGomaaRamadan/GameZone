@@ -4,7 +4,7 @@
     ViewData["Title"] = "Game|Index";
 }
 
-@if(!Model.Any())
+@if (!Model.Any())
 {
     <div class="alert alert-warning mt-5">
         <h4 class="alert-heading">Warning!</h4>
@@ -13,9 +13,9 @@
 }
 else
 {
-  <div class="mt-5">
-      <table class="table table-bordered border-primary">
-          @foreach(var g in Model)
+    <div class="mt-5">
+        <table class="table table-bordered border-primary">
+            @foreach (var g in Model)
             {
                 <tr class="border-1 border-primary">
                     <td>
@@ -31,21 +31,16 @@ else
 
                         </div>
                     </td>
-                    <td class="align-middle"> 
+                    <td class="align-middle">
                         <div class="d-flex justify-content-end ">
-                            <a href="#" class="btn btn-primary rounded rounded-3 me-4">Edit</a>
+                            <a class="btn btn-info rounded rounded-3 me-4" asp-controller="Game" asp-action="Details" asp-route-id="@g.Id">Details</a>
+                            <a class="btn btn-primary rounded rounded-3 me-4" asp-controller="Game" asp-action="Edit" asp-route-id="@g.Id">Edit</a>
                             <a href="#" class="btn btn-danger rounded rounded-3">Delete</a>
                         </div>
                     </td>
-
-
                 </tr>
             }
-            
-
-      </table>
-
-  </div>
-    
+        </table>
+    </div>
 }
 
