@@ -81,23 +81,24 @@ namespace GameZone.Services.Games
             return Game;
         }
         [HttpDelete]
-        //public IActionResult<bool> Delete(int id)
-        //{
-        //    bool deleted = false;
-        //    var game = _context.Games.Find(id);
-        //    if(game is null)
-        //    {
-        //        return deleted;
-        //    }
-        //    _context.Remove(game);
-        //    int effected = _context.SaveChanges();
-        //    if (effected > 0) {
-        //        var cover = Path.Combine(Settings.filePath, game.Cover);
-        //        File.Delete(cover);
-        //        deleted = true;
-        //    }
-        //    return deleted;
-        //}
+        public bool Delete(int id)
+        {
+            bool deleted = false;
+            var game = _context.Games.Find(id);
+            if (game is null)
+            {
+                return deleted;
+            }
+            _context.Remove(game);
+            int effected = _context.SaveChanges();
+            if (effected > 0)
+            {
+                var cover = Path.Combine(_coverImagePath, game.Cover);
+                File.Delete(cover);
+                deleted = true;
+            }
+            return deleted;
+        }
         private async Task<string> saveimage(IFormFile cover)
         {
             var coverName = $"{Guid.NewGuid()}{Path.GetExtension(cover.FileName)}";
@@ -108,9 +109,5 @@ namespace GameZone.Services.Games
             return coverName;
         }
 
-        bool IGameServices.Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

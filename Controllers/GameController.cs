@@ -93,5 +93,10 @@ namespace GameZone.Controllers
             return RedirectToAction("Index");
 
         }
+
+        public IActionResult Delete(int id) {
+            bool isdeleted = _gameServices.Delete(id);
+            return isdeleted ? Ok() : BadRequest();
+        }
     }
 }
