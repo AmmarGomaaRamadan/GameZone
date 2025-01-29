@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\GameZone.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\128854d1-aaa6-451c-be4e-a858873db702.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Cover_Images\\128854d1-aaa6-451c-be4e-a858873db702.jpg"
+    },
+    {
       "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\23aa2a4e-576c-4b40-8ed7-ccfcb147e97d.jpg",
       "PackagePath": "staticwebassets\\Assets\\Cover_Images\\23aa2a4e-576c-4b40-8ed7-ccfcb147e97d.jpg"
     },
@@ -49,10 +53,6 @@
       "PackagePath": "staticwebassets\\Assets\\Cover_Images\\9027ec19-46d6-4764-9bb5-0878ac80b0ac.jpg"
     },
     {
-      "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\93fe0216-4020-472c-a15d-53290b08343c.jpg",
-      "PackagePath": "staticwebassets\\Assets\\Cover_Images\\93fe0216-4020-472c-a15d-53290b08343c.jpg"
-    },
-    {
       "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\Assets\\Cover_Images\\System.Func`1[System.Guid].PNG",
       "PackagePath": "staticwebassets\\Assets\\Cover_Images\\System.Func`1[System.Guid].PNG"
     },
@@ -79,6 +79,10 @@
     {
       "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\js\\DeleteGame.js",
+      "PackagePath": "staticwebassets\\js\\DeleteGame.js"
     },
     {
       "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\js\\FileExtensionAndSizeValidator.js",
@@ -327,6 +331,14 @@
     {
       "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\lib\\select2\\js\\select2.min.js",
       "PackagePath": "staticwebassets\\lib\\select2\\js\\select2.min.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\lib\\sweetalert2\\sweetalert2.min.css",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2.min.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\source\\repos\\GameZone\\wwwroot\\lib\\sweetalert2\\sweetalert2.min.js",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2.min.js"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.GameZone.Microsoft.AspNetCore.StaticWebAssets.props",

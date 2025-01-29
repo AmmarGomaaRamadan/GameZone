@@ -35,12 +35,16 @@ else
                         <div class="d-flex justify-content-end ">
                             <a class="btn btn-info rounded rounded-3 me-4" asp-controller="Game" asp-action="Details" asp-route-id="@g.Id">Details</a>
                             <a class="btn btn-primary rounded rounded-3 me-4" asp-controller="Game" asp-action="Edit" asp-route-id="@g.Id">Edit</a>
-                            <a href="#" class="btn btn-danger rounded rounded-3">Delete</a>
+                            <a href="javascript:;" class="btn btn-danger rounded rounded-3 del" data-id="@g.Id">Delete</a>
                         </div>
                     </td>
                 </tr>
             }
         </table>
     </div>
+}
+@section Scripts
+{
+    <script src="~/js/deletegame.js"></script>
 }
 
